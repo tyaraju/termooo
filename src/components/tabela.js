@@ -1,20 +1,9 @@
 import React, {Fragment} from 'react';
 import Lines from './lines';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Tabela = (props) => {
-  
-  
-    //let numTables = props.numTabelas;
-    let word = props.word;
-    
-    
-    //const arrTables = new Array(numTables);
-    //const [planets, setPlanets] = useState(0);
-    //setPlanets([...planets, last_planet])
-    
-    
-    
-  
   //const [setTabela] = useState([ ]);
 
 
@@ -35,13 +24,31 @@ const Tabela = (props) => {
   <button onClick={removeLast}>Remove Last</button>
       <button onClick={duplicateLastPlanet}>Duplicate Last</button>
   */
-  return (
-    <Fragment>
+  
+  let numTables = parseInt(props.numTables);
+  //let word = props.word;
+  
+  const arrTables = Array.from({length:numTables})
+  //const setClass = 
+  
+  let setTables =  arrTables.map((element,index) => 
+    //(numTables === 4 && index === 1) ? `</Row><Row>` : ``
+
+    <Col>
       <Lines 
         numLines={props.numLines}
         numColunms={props.numColunms}
-        class='tabela1'
       />
+    </Col>
+
+    //(numTables === 4 && index === 3) ? `</Row>` : ``;
+  );
+
+  return (
+    <Fragment>
+      <Row>
+        {setTables}
+      </Row>
     </Fragment>
   )
 }

@@ -1,6 +1,7 @@
-import React, {Fragment, useState, useEffect } from 'react';
+import React, {Fragment } from 'react';
 import Header from './header.js';
 import Tabela from './tabela.js';
+import Container from 'react-bootstrap/Container';
 //import Celula from './celula.js';
 /*
 async function getPlanets(){
@@ -42,14 +43,14 @@ const Termo = () => {
       <Header />
       
       <hr />
-      <div id={`line`}>
+      <Container>
         <Tabela 
-          numTables= {1}
+          numTables= {4}
           numLines= {5}
           numColunms= {6}
           word= {'porta'}
         />
-      </div>
+      </Container>
     </Fragment>
   )
 
