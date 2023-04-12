@@ -34,10 +34,12 @@ const Tabela = (props) => {
   let setTables =  arrTables.map((element,index) => 
     //(numTables === 4 && index === 1) ? `</Row><Row>` : ``
 
-    <Col>
+    <Col xs={(numTables >= 2) ? 6 : 12} md={6}>
       <Lines 
         numLines={props.numLines}
         numColunms={props.numColunms}
+        idTable={index} 
+        key={index}
       />
     </Col>
 
@@ -46,7 +48,7 @@ const Tabela = (props) => {
 
   return (
     <Fragment>
-      <Row>
+      <Row className='justify-content-md-center'>
         {setTables}
       </Row>
     </Fragment>

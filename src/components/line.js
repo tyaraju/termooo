@@ -10,14 +10,14 @@ const Line = (props) => {
   const createColunms = arrColunms.map( (column,index)=>  
     <Celula 
       idCel={`cel${index}`}
-      classCel={(index === 0 && props.num === 0) ? 'letter empty edit' : 'letter empty'}
+      classCel={(index === 0 && props.firstLine === 0) ? 'letter empty edit' : 'letter empty'}
       key={column}
     />
   
   )
   return (
     <Fragment>
-      <div id={`line${props.idLine}`} className={`d-flex flex-column ${props.firstClassLine}`} bla={props.num}>
+      <div id={`line${props.idLine}`} className={`d-flex flex-row ${props.firstClassLine}`} bla={props.num}>
         {createColunms}
       </div>
     </Fragment>

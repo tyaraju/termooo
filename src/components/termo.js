@@ -1,6 +1,7 @@
 import React, {Fragment } from 'react';
 import Header from './header.js';
 import Tabela from './tabela.js';
+import Keyboard from './keyboard.js';
 import Container from 'react-bootstrap/Container';
 //import Celula from './celula.js';
 /*
@@ -40,23 +41,18 @@ const Termo = () => {
       
   return (
     <Fragment>
-      <Header />
-      
-      <hr />
       <Container>
-        <Tabela 
-          numTables= {4}
+        <Header/>
+        <Tabela
+          numTables= {2}
           numLines= {5}
           numColunms= {6}
           word= {'porta'}
         />
+        <Keyboard />
       </Container>
     </Fragment>
   )
-
-  
-  
-      
 }
 
 export default Termo;

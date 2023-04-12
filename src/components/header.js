@@ -22,7 +22,7 @@ const Header = () => {
   */
   return (
     <Fragment>
-      <div id="header" className='header'>
+      <div id="header" className='header row align-items-start'>
         <div className='menu'>TERMO</div>
       </div>
     </Fragment>

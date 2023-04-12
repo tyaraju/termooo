@@ -4,9 +4,7 @@ import Termo from './components/termo.js';
 
 function App() {
   return (
-    <div className="App">
-      <Termo />
-    </div>
+    <Termo />
   );
 }
 
