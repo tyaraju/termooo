@@ -1,20 +1,25 @@
 import React, {Fragment, useState } from 'react';
-import Celula from './celula';
 
 const Line = (props) => {
-  //let numColunms = props.numColunms;
-  //const numColunms = useState(props.numColunms)
-  //const arrColunms = new Array(numColunms).fill(2);
-  const [arrColunms, setArrColunms] = useState(["","","","",""]);
+  let arrColunms = Array.from({length:props.numColunms});
+  let [arrayCel,setArrayCel] = useState('')
+  /*
+  
+  letterKey={props.letterKey}
+  indice={props.indice}*/
 
   const createColunms = arrColunms.map( (column,index)=>  
-    <Celula 
-      idCel={`cel${index}`}
-      classCel={(index === 0 && props.firstLine === 0) ? 'letter empty edit' : 'letter empty'}
-      key={column}
-    />
+    <div 
+      id={`cel${index}`} 
+      className={`d-flex p-2 ${(index === 0 && props.firstLine === 0) ? 'letter empty edit' : 'letter empty'}`}
+      key={index}
+    >{}</div>
   
   )
+  //console.log('tyara',props.letterKey,props.indice)
+  const fillCels = () => {
+    
+  }
   return (
     <Fragment>
       <div id={`line${props.idLine}`} className={`d-flex flex-row ${props.firstClassLine}`} bla={props.num}>

@@ -1,4 +1,4 @@
-import React, {Fragment } from 'react';
+import React, {Fragment, useState } from 'react';
 import Header from './header.js';
 import Tabela from './tabela.js';
 import Keyboard from './keyboard.js';
@@ -37,19 +37,37 @@ const Termo = () => {
       <button onClick={duplicateLastPlanet}>Duplicate Last</button>
   */
   //const [planets, setPlanets] = useState([ ]);
+  const [letterKey,setActualLetter] = useState('')
+  //let arrayWord = useState([])
+  let [indice, setIndice] = useState(0);
+
   
-      
+  const clickLetter = (e) => {
+    const letter = e.target.value;
+    if (letter !== '<-' && letter !== 'ENTER') { //? 'btn' : ( letter === '<-') ? 'btn backspace' : 'btn enter'} 
+      if(indice<5){
+        //let new_word = [...letterKey]
+        //let letter = e.target.value;
+        setActualLetter([...letterKey,e.target.value])
+        setIndice(parseInt(indice+1))
+      }
+    }
+    console.log(indice,letterKey)
+    //console.log(indice,setActualLetter)
+  }
+  //word= {'porta'}  
   return (
     <Fragment>
       <Container>
         <Header/>
         <Tabela
           numTables= {2}
-          numLines= {5}
-          numColunms= {6}
-          word= {'porta'}
+          numLines= {6}
+          numColunms= {5}
+          letterKey={letterKey}
+          indice={indice}
         />
-        <Keyboard />
+        <Keyboard clickLetter={clickLetter}/>
       </Container>
     </Fragment>
   )

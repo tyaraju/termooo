@@ -10,12 +10,15 @@ const Lines = (props) => {
       firstClassLine={(index === 0) ? 'line lineActived' : 'line'}
       idLine={`line${index}`}
       firstLine={index}
+      key={index}
+      letterKey={props.letterKey}
+      indice={props.indice}
     />
   );
   
   return (
     <Fragment>
-      <div id={`table${props.idTable}`} className="table d-flex flex-column">
+      <div id={`table${props.idTable}`} className="table d-flex flex-column" fillCels>
         {createLines}
       </div>
     </Fragment>
